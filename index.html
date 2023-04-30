@@ -1,0 +1,148 @@
+
+<!-- https://underdaumbrella.readyplayer.me?frameApi -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  
+  <form id="login-form" method="post" action="">
+       <h1>Under the Umbrella (Prototype)</h1>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+      <button id="submit">Log in</button>
+    </div>
+  </form>
+  
+  <div id="content" style="display: none;">
+    <div class="wrapper">
+      <img src="image/Umbrella-Bear.png" alt="umbrellabear">
+      <div class="menu-toggle" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+      <nav>
+        <ul>
+          <li><a href="#" id="checkout">Checkout</a></li>
+          <li><a href="#" id="chat">Chat</a></li>
+          <li><a href="#" id="search">Search</a></li>
+          <li><a href="#" id="my-profile-link">My Profile</a></li>
+        </ul>
+      </nav>
+  
+
+  </div>
+
+  <div id="my-profile" style="display: none;">
+
+    <h1>My Profile</h1>
+    <model-viewer id="modelviewer" alt="Ready Player Me Avatar"  
+    src="https://models.readyplayer.me/64476eacd300445b0f4c0234.glb" shadow-intensity="1" camera-controls
+    touch-action="pan-y">
+</model-viewer>
+
+<h3>Bio</h3>
+<p>Under the Umbrella Founder. Get Under the Umbrella Plus to access our private Wardrobe.</p>
+
+<h3>Followers</h3>
+<p>12.3M followers     367 following</p>
+
+<h3>Wardrobe</h3>
+<button class="public">Public</button>
+<button class="private">Private</button>
+</div>
+
+<div id="search-bar" style="display: none;">
+
+  <h1>Search</h1>
+  <form class="search-form">
+    <input type="text" placeholder="Search...">
+    <button type="button" onclick="takePicture()">Camera</button>
+    <img id="imagePreview" src="" alt="">
+</form>
+
+ </div>
+
+ <div id="chat-bar" style="display: none;">
+  
+  <h1>Chat</h1>
+  <div id="chat-window"></div>
+ 
+  <div class="chat-bubble">
+    <input type="text" id="message-input" />
+    <button class= "chat-button" onclick="sendMessage()">Send</button>
+  </div>
+ </div>
+
+ <div id="checkout-bar" style="display: none;">
+ <h1>Checkout</h1>
+  
+ <div class="product">
+   
+  <img src="image/IMG_4448.png" alt="Product 1">
+   <button data-price="14">Add to cart</button>
+  </div>
+
+  <div class="product">  
+    <img src="image/teddybear.png" alt="Product 2">
+    
+    <button data-price="45">Add to cart</button>
+  </div>
+
+  <div class="cart">
+    <h3>Cart</h3>
+    <div class="cart-item">
+      <span>Product 1</span>
+      <span>$14</span>
+      <button>Remove</button>
+    </div>
+    <div class="cart-item">
+      <span>Product 2</span>
+      <span>$45</span>
+      <button>Remove</button>
+    </div>
+    <div class="total">
+      <span>Total:</span>
+      <span>$59.00</span>
+    </div>
+    <button class="checkout-button">Checkout</button>
+  </div>
+
+ </div>
+
+  
+  <div> 
+ <h2>Under the Umbrella</h2>
+   
+    <input type="button" value="Create Your Avatar" onClick="displayIframe()" />
+    
+    <iframe id="frame" class="frame" allow="camera *; microphone *; clipboard-write" hidden></iframe>
+ 
+</div>
+ </div>
+
+    <script src="assets/script.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+</body>
+
+</html>
+
+<!-- Avatar URL: https://models.readyplayer.me/64358725204b1d02c9dada6d.glb -->
